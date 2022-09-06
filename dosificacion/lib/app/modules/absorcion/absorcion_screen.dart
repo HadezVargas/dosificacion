@@ -1,3 +1,4 @@
+import 'package:dosificacion/app/core/utils/barrel_files/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +32,8 @@ class AbsorcionScreen extends StatelessWidget {
                           tituloModulo1: tituloModulo2,
                           caudal: globalController.caudalModulo2)
                     ],
-                  )
+                  ),
+                  CronoScreen()
                 ],
               ),
             );
