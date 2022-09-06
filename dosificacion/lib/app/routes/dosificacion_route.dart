@@ -11,7 +11,7 @@ class DosificacionRoute {
   static final menuDosificacionOptions = <MenuDosificacionOptionsModel>[
     MenuDosificacionOptionsModel(
         route: '/oxidacion',
-        name: 'OXIDACION',
+        name: 'DIOXIDO DE CLORO',
         screen: const OxidacionScreen(),
         icon: Icons.invert_colors_on_rounded,
         binding: OxidaxionBinding()),

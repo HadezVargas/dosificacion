@@ -1,3 +1,4 @@
+export 'package:dosificacion/app/data/global_controller/global_controller.dart';
 export 'package:dosificacion/app/modules/absorcion/absorcion_controller.dart';
 export 'package:dosificacion/app/modules/crono/crono_controller.dart';
 export 'package:dosificacion/app/modules/cuagulacion/cuagulacion_controller.dart';
