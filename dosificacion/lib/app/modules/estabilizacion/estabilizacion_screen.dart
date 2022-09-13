@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:dosificacion/app/core/themes/app_theme.dart';
-import 'package:dosificacion/app/core/utils/barrel_files/controllers.dart';
-import 'package:dosificacion/app/core/utils/barrel_files/global_widgets.dart';
+import '../../core/themes/app_theme.dart';
+import '../../core/utils/barrel_files/controllers.dart';
+import '../../core/utils/barrel_files/global_widgets.dart';
 
 class EstabilizacionScreen extends StatelessWidget {
   const EstabilizacionScreen({Key? key}) : super(key: key);
@@ -44,6 +44,7 @@ class EstabilizacionScreen extends StatelessWidget {
                             CustomRowButtons(),
                           ])),
                 ),
+                const CustomCrono()
               ],
             ));
           },

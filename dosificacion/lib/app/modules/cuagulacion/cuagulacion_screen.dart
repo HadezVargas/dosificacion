@@ -25,9 +25,10 @@ class CuagulacionScreen extends StatelessWidget {
                         caudal: globalController.caudalModulo1),
                     CustomColumnModulo(
                         tituloModulo1: tituloModulo1,
-                        caudal: globalController.caudalModulo2)
+                        caudal: globalController.caudalModulo2),
                   ],
-                )
+                ),
+                const CustomCrono()
               ],
             ),
           );

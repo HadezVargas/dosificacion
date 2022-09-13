@@ -31,7 +31,8 @@ class FloculacionScreen extends StatelessWidget {
                           tituloModulo1: tituloModulo2,
                           caudal: globalController.caudalModulo2)
                     ],
-                  )
+                  ),
+                  const CustomCrono()
                 ],
               ),
             );

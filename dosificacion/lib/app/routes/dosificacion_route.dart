@@ -45,12 +45,6 @@ class DosificacionRoute {
         screen: const DesinfeccionScreen(),
         icon: Icons.invert_colors_on_rounded,
         binding: DesinfeccionBinding()),
-    MenuDosificacionOptionsModel(
-        route: '/crono',
-        name: 'CRONO',
-        screen: const CronoScreen(),
-        icon: Icons.invert_colors_on_rounded,
-        binding: CronoBinding()),
   ];
 
   static List<GetPage<dynamic>>? getAppRoutesDosificacion() {

@@ -33,7 +33,7 @@ class AbsorcionScreen extends StatelessWidget {
                           caudal: globalController.caudalModulo2)
                     ],
                   ),
-                  CronoScreen()
+                  const CustomCrono()
                 ],
               ),
             );

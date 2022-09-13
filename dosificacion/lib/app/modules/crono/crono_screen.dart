@@ -1,8 +1,8 @@
-import 'package:dosificacion/app/core/utils/barrel_files/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/themes/app_theme.dart';
+import '../../core/utils/barrel_files/controllers.dart';
 import '../../core/utils/barrel_files/global_widgets.dart';
 
 class CronoScreen extends StatelessWidget {
@@ -49,16 +49,20 @@ class CronoScreen extends StatelessWidget {
                       color: AppTheme.primary,
                       iconSize: 35),
                   IconButton(
-                    onPressed: () => start(),
-                    icon: const Icon(Icons.play_circle_fill_outlined),
+                    onPressed: () {
+                      if (isPlaying == false) {
+                        start();
+                        isPlaying = !isPlaying;
+                      } else {
+                        stop();
+                        isPlaying = !isPlaying;
+                      }
+                    },
+                    icon: isPlaying
+                        ? const Icon(Icons.pause_circle_filled_outlined)
+                        : const Icon(Icons.play_circle_fill_outlined),
                     color: AppTheme.primary,
-                    iconSize: 45,
-                  ),
-                  IconButton(
-                    onPressed: () => stop(),
-                    icon: const Icon(Icons.pause_circle_filled_outlined),
-                    color: AppTheme.primary,
-                    iconSize: 45,
+                    iconSize: 55,
                   ),
                   IconButton(
                       onPressed: () => reset(),
