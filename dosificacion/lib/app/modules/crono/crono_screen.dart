@@ -10,25 +10,12 @@ class CronoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final globalController = Get.find<GlobalController>();
-    final stopWatch = globalController.stopWatch;
-    final display = globalController.displayTime;
-    final start = globalController.start;
-    final stop = globalController.stop;
-    final reset = globalController.reset;
-    final setSeconds = globalController.setSeconds;
     final controllerTime = TextEditingController();
     bool isPlaying = false;
-    return SingleChildScrollView(
-      child: StreamBuilder<int>(
-        stream: stopWatch.rawTime,
-        initialData: stopWatch.rawTime.value,
-        builder: (context, snap) {
-          final value = snap.data!;
-          final displayTime = display(value);
-          controllerTime.text = displayTime;
-          return Card(
-              child: Container(
+    return GetBuilder<CronoController>(builder: (_) {
+      return SingleChildScrollView(
+        child: Card(
+          child: Container(
             margin: const EdgeInsets.all(5),
             padding: const EdgeInsets.all(10),
             width: double.infinity,
@@ -36,25 +23,24 @@ class CronoScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomInputField(
-                  controller: controllerTime,
-                  label: 'Tiempo de aforo (s)',
-                  hintText: 'ingrese un valor',
-                  setFunction: setSeconds,
-                ),
+                // CustomInputField(
+                //   // controller: controllerTime,
+                //   label: 'Tiempo de aforo (s)',
+                //   hintText: 'ingrese un valor',
+                // ),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   IconButton(
-                      onPressed: () => setSeconds(),
+                      onPressed: () => _.setSeconds(),
                       icon: const Icon(Icons.timelapse),
                       color: AppTheme.primary,
                       iconSize: 35),
                   IconButton(
                     onPressed: () {
                       if (isPlaying == false) {
-                        start();
+                        _.start();
                         isPlaying = !isPlaying;
                       } else {
-                        stop();
+                        _.stop();
                         isPlaying = !isPlaying;
                       }
                     },
@@ -65,16 +51,16 @@ class CronoScreen extends StatelessWidget {
                     iconSize: 55,
                   ),
                   IconButton(
-                      onPressed: () => reset(),
+                      onPressed: () => _.reset(),
                       icon: const Icon(Icons.refresh_outlined),
                       color: AppTheme.primary,
                       iconSize: 35)
                 ])
               ],
             ),
-          ));
-        },
-      ),
-    );
+          ),
+        ),
+      );
+    });
   }
 }

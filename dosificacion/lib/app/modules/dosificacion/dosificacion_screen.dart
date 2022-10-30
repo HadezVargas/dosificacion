@@ -1,3 +1,4 @@
+import 'package:dosificacion/app/modules/dosificacion/local_widgets/card_caudales.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,6 +17,7 @@ class DosificacionScreen extends StatelessWidget {
           body: SingleChildScrollView(
               child: Column(
             children: [
+              const CardCaudales(),
               Container(
                 decoration: AppTheme.decorationContainer,
                 //TODO: cambiar la funcion por la de guardar en base de datos
