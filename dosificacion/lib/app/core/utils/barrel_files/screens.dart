@@ -7,3 +7,4 @@ export 'package:dosificacion/app/modules/estabilizacion/estabilizacion_screen.da
 export 'package:dosificacion/app/modules/floculacion/floculacion_screen.dart';
 export 'package:dosificacion/app/modules/home/home_screen.dart';
 export 'package:dosificacion/app/modules/oxidacion/oxidacion_screen.dart';
+export 'package:dosificacion/app/modules/splash/splash_screen.dart';

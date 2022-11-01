@@ -10,8 +10,12 @@ class CustomInputField extends StatelessWidget {
     this.initialValue,
     this.captura,
     this.controller,
+    this.funcionCaudal,
+    this.setcaudal,
   }) : super(key: key);
   //TODO: definir que son cada una de estos atributos
+  final Function? funcionCaudal;
+  final Function? setcaudal;
   final Function? function;
   final Function? setFunction;
   final String? label;
@@ -33,11 +37,7 @@ class CustomInputField extends StatelessWidget {
       style: const TextStyle(fontSize: 18),
       keyboardType: TextInputType.number,
       onChanged: (value) {
-        if (setFunction != null && function != null) {
-          setFunction!(value, function);
-        } else if (setFunction != null) {
-          setFunction!(value);
-        }
+        setcaudal!(funcionCaudal!(double.parse(value)));
       },
     );
   }

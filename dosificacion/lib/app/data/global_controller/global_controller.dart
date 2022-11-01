@@ -7,15 +7,18 @@ import 'package:get/get.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 class GlobalController extends GetxController {
-  final RxDouble _caudal_Modulo_1 = 0.0.obs;
-  final RxDouble _caudal_Modulo_2 = 0.0.obs;
-  final RxDouble _caudal_Total = 220.0.obs;
+  final RxDouble _caudalModulo_1 = 0.0.obs;
+  final RxDouble _caudalModulo_2 = 0.0.obs;
+  final RxDouble _caudalTotal = 220.0.obs;
   final StopWatchTimer _stopWatch = StopWatchTimer(mode: StopWatchMode.countUp);
 
-  RxDouble get caudalModulo1 => _caudal_Modulo_1;
-  RxDouble get caudalModulo2 => _caudal_Modulo_2;
-  RxDouble get caudalTotal => _caudal_Total;
+  RxDouble get caudalModulo1 => _caudalModulo_1;
+  RxDouble get caudalModulo2 => _caudalModulo_2;
+  RxDouble get caudalTotal => _caudalTotal;
   StopWatchTimer get stopWatch => _stopWatch;
+
+  setcaudalModulo1(double valor) => _caudalModulo_1.value = valor;
+  setcaudalModulo2(double valor) => _caudalModulo_2.value = valor;
 
   /// Funciones para el manejo del cronometro
   void start() => _stopWatch.onExecute.add(StopWatchExecute.start);

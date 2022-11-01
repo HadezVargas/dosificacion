@@ -11,20 +11,18 @@ class DosificacionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<DosificacionController>(builder: (_) {
-      return Scaffold(
-          appBar: AppBar(title: const Center(child: Text('Dosificacion'))),
-          body: SingleChildScrollView(
-              child: Column(
-            children: [
-              const CardCaudales(),
-              Container(
-                decoration: AppTheme.decorationContainer,
-                //TODO: cambiar la funcion por la de guardar en base de datos
-                child: MenuDosificacion(function: () {}),
-              )
-            ],
-          )));
-    });
+    return Scaffold(
+        appBar: AppBar(title: const Center(child: Text('Dosificacion'))),
+        body: SingleChildScrollView(
+            child: Column(
+          children: [
+            CardCaudales(),
+            Container(
+              decoration: AppTheme.decorationContainer,
+              //TODO: cambiar la funcion por la de guardar en base de datos
+              child: MenuDosificacion(function: () {}),
+            )
+          ],
+        )));
   }
 }

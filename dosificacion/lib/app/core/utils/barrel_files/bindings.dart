@@ -7,3 +7,4 @@ export 'package:dosificacion/app/modules/estabilizacion/estabilizacion_binding.d
 export 'package:dosificacion/app/modules/floculacion/floculacion_binding.dart';
 export 'package:dosificacion/app/modules/home/home_binding.dart';
 export 'package:dosificacion/app/modules/oxidacion/oxidacion_binding.dart';
+export 'package:dosificacion/app/modules/splash/splash_binding.dart';

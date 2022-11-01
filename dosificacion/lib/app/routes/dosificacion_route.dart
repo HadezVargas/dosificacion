@@ -49,6 +49,7 @@ class DosificacionRoute {
 
   static List<GetPage<dynamic>>? getAppRoutesDosificacion() {
     List<GetPage<dynamic>>? appRoutes = [];
+
     appRoutes.addAll({
       GetPage(
           name: '/dosificacion',

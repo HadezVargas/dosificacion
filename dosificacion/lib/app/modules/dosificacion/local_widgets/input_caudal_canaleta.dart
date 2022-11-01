@@ -1,3 +1,4 @@
+import 'package:dosificacion/app/core/utils/barrel_files/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +8,17 @@ import '../../../core/utils/barrel_files/global_widgets.dart';
 class InputCaudalCanaleta extends StatelessWidget {
   ///[modulo] recibe un string con el numero del modulo que se va a mostrar
   final String modulo;
-  const InputCaudalCanaleta({Key? key, required this.modulo}) : super(key: key);
+  final Function funcionCaudal;
+  final Function setCaudal;
+  final RxDouble caudal;
+  // GlobalController global = Get.find();
+  const InputCaudalCanaleta(
+      {Key? key,
+      required this.modulo,
+      required this.funcionCaudal,
+      required this.setCaudal,
+      required this.caudal})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +36,8 @@ class InputCaudalCanaleta extends StatelessWidget {
                 child: CustomInputField(
                   label: 'Canaleta modulo $modulo',
                   hintText: 'Altura canaleta',
+                  funcionCaudal: funcionCaudal,
+                  setcaudal: setCaudal,
                 )),
             Padding(
                 padding: const EdgeInsets.only(left: 5),
@@ -33,10 +46,11 @@ class InputCaudalCanaleta extends StatelessWidget {
                 )),
             Padding(
                 padding: const EdgeInsets.only(left: 5),
-                child: Text(
-                  'hola yo',
-                  style: TextStyle(fontStyle: FontStyle.italic, fontSize: 25),
-                )),
+                child: Obx(() => Text(
+                      caudal.value.toString(),
+                      style: const TextStyle(
+                          fontStyle: FontStyle.italic, fontSize: 25),
+                    ))),
           ],
         ),
       ),
