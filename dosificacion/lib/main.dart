@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(GlobalController());
     return GetMaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       initialRoute: DosificacionRoute.initialRoute,
       getPages: DosificacionRoute.getAppRoutesDosificacion(),
       theme: AppTheme.lightTheme,
