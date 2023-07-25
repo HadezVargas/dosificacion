@@ -9,6 +9,7 @@ class AppTheme {
       border: Border.all(color: primary));
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
+      useMaterial3: true,
       primaryColor: primary,
       //AppBarTheme
       appBarTheme: const AppBarTheme(color: primary, elevation: 0),
